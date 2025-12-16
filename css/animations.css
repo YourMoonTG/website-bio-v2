@@ -1,0 +1,45 @@
+/* Анимации */
+
+/* Единый класс появления блоков при прокрутке */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Базовая анимация мерцания звезд */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.star {
+    transition: all 0.3s ease;
+}
+
+.star:hover {
+    transform: scale(1.5);
+    opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate {
+        transition: none;
+        transform: none;
+    }
+    
+    .star {
+        animation: none !important;
+    }
+}

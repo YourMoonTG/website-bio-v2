@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кастомный Linux - Moon Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="project-styles.css">
+    
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <span class="logo-text">Moon</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html#about" class="nav-link">О себе</a>
+                    <a href="../index.html#portfolio" class="nav-link">Портфолио</a>
+                    <a href="../index.html#contact" class="nav-link">Контакты</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero секция проекта -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-content">
+                <div class="project-breadcrumb">
+                    <a href="../index.html">Главная</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="../index.html#portfolio">Портфолио</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Кастомный Linux</span>
+                </div>
+                
+                <h1 class="project-title">Кастомный Linux</h1>
+                <p class="project-subtitle">Автоматизированная настройка Arch Linux WSL с кастомной конфигурацией, средой разработки и современными инструментами</p>
+                
+                <div class="project-meta">
+                    <div class="project-category">
+                        <span class="category-icon">🐧</span>
+                        <span>Системное администрирование</span>
+                    </div>
+                    <div class="project-year">2024</div>
+                    <div class="project-status">
+                        <span class="status-badge status-completed">Готов к использованию</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обзор проекта -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>Обзор проекта</h2>
+                    <p>Кастомный Linux дистрибутив — это полностью автоматизированная система настройки Arch Linux WSL для Windows 10/11. Проект включает в себя PowerShell скрипты для автоматической установки, настройки среды разработки и создания оптимальной рабочей среды.</p>
+                    
+                    <h3>Ключевые возможности:</h3>
+                    <ul class="feature-list">
+                        <li>Автоматическая установка и настройка Arch Linux WSL</li>
+                        <li>Создание пользователя Moon с правами sudo</li>
+                        <li>Настройка zsh с oh-my-zsh и powerlevel10k</li>
+                        <li>Установка современных инструментов разработки</li>
+                        <li>Конфигурация WSL для оптимальной производительности</li>
+                        <li>Система логирования и мониторинга установки</li>
+                        <li>Поддержка как новых, так и существующих установок</li>
+                    </ul>
+                </div>
+                
+                <div class="overview-image">
+                    <div class="project-placeholder-large">
+                        <span class="placeholder-icon">🐧</span>
+                        <span>Архитектура кастомного Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Технологический стек -->
+    <section class="project-tech">
+        <div class="container">
+            <h2>Технологический стек</h2>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Основные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-powershell">PowerShell</span>
+                        <span class="tech-tag tech-arch">Arch Linux</span>
+                        <span class="tech-tag tech-wsl">WSL 2</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Оболочка и терминал</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-zsh">zsh</span>
+                        <span class="tech-tag tech-ohmyzsh">oh-my-zsh</span>
+                        <span class="tech-tag tech-p10k">powerlevel10k</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Системные утилиты</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-vim">vim</span>
+                        <span class="tech-tag tech-git">git</span>
+                        <span class="tech-tag tech-curl">curl</span>
+                        <span class="tech-tag tech-wget">wget</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Современные инструменты</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-bat">bat</span>
+                        <span class="tech-tag tech-exa">exa</span>
+                        <span class="tech-tag tech-fd">fd</span>
+                        <span class="tech-tag tech-ripgrep">ripgrep</span>
+                        <span class="tech-tag tech-fzf">fzf</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Среда разработки</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-python">Python</span>
+                        <span class="tech-tag tech-nodejs">Node.js</span>
+                        <span class="tech-tag tech-go">Go</span>
+                        <span class="tech-tag tech-rust">Rust</span>
+                        <span class="tech-tag tech-docker">Docker</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Конфигурация</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag tech-yaml">YAML</span>
+                        <span class="tech-tag tech-json">JSON</span>
+                        <span class="tech-tag tech-conf">Конфигурационные файлы</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Архитектура -->
+    <section class="project-architecture">
+        <div class="container">
+            <h2>Архитектура системы</h2>
+            <div class="architecture-diagram">
+                <div class="arch-component">
+                    <div class="component-icon">🪟</div>
+                    <h4>Windows Host</h4>
+                    <p>Windows 10/11 с WSL 2</p>
+                </div>
+                
+                <div class="arch-arrow">→</div>
+                
+                <div class="arch-component">
+                    <div class="component-icon">🔧</div>
+                    <h4>PowerShell Scripts</h4>
+                    <p>Автоматизация установки и настройки</p>
+                </div>
+                
+                <div class="arch-arrow">→</div>
+                
+                <div class="arch-component">
+                    <div class="component-icon">🐧</div>
+                    <h4>Arch Linux WSL</h4>
+                    <p>Базовая система Linux</p>
+                </div>
+                
+                <div class="arch-arrow">↓</div>
+                
+                <div class="arch-component">
+                    <div class="component-icon">👤</div>
+                    <h4>User Moon</h4>
+                    <p>Пользователь с sudo правами</p>
+                </div>
+                
+                <div class="arch-component">
+                    <div class="component-icon">⚡</div>
+                    <h4>zsh + oh-my-zsh</h4>
+                    <p>Современная оболочка с плагинами</p>
+                </div>
+                
+                <div class="arch-component">
+                    <div class="component-icon">🛠️</div>
+                    <h4>Dev Tools</h4>
+                    <p>Инструменты разработки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс разработки -->
+    <section class="project-process">
+        <div class="container">
+            <h2>Этапы разработки</h2>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Фаза 1: Базовая настройка</h3>
+                        <p>Создание PowerShell скриптов для установки Arch WSL, настройка базовой системы</p>
+                        <span class="timeline-status completed">✅ Завершено</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Фаза 2: Пользователь и права</h3>
+                        <p>Создание пользователя Moon, настройка sudo, конфигурация безопасности</p>
+                        <span class="timeline-status completed">✅ Завершено</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Фаза 3: Оболочка и инструменты</h3>
+                        <p>Установка zsh, oh-my-zsh, powerlevel10k, современных утилит</p>
+                        <span class="timeline-status completed">✅ Завершено</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Фаза 4: Среда разработки</h3>
+                        <p>Установка языков программирования, инструментов разработки, Docker</p>
+                        <span class="timeline-status completed">✅ Завершено</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты -->
+    <section class="project-results">
+        <div class="container">
+            <h2>Результаты и достижения</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">⚡</div>
+                    <h3>Автоматизация</h3>
+                    <p>Полностью автоматическая установка и настройка за 10 минут</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">🛠️</div>
+                    <h3>Инструменты</h3>
+                    <p>50+ современных утилит для разработки и системного администрирования</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">🎨</div>
+                    <h3>Интерфейс</h3>
+                    <p>Красивая оболочка zsh с powerlevel10k и полезными плагинами</p>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">🔒</div>
+                    <h3>Безопасность</h3>
+                    <p>Настроенная система безопасности с правильными правами доступа</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Установленные пакеты -->
+    <section class="project-links">
+        <div class="container">
+            <h2>Установленные компоненты</h2>
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <div class="link-icon">📦</div>
+                    <h3>Основные пакеты</h3>
+                    <p>vim, nano, curl, wget, git, htop, tree, tmux, screen</p>
+                </a>
+                
+                <a href="#" class="link-card">
+                    <div class="link-icon">⚡</div>
+                    <h3>Современные утилиты</h3>
+                    <p>bat, exa, fd, ripgrep, fzf, jq, neofetch</p>
+                </a>
+                
+                <a href="#" class="link-card">
+                    <div class="link-icon">💻</div>
+                    <h3>Среда разработки</h3>
+                    <p>Python, Node.js, Go, Rust, Docker, VS Code</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навигация между проектами -->
+    <section class="project-navigation">
+        <div class="container">
+            <div class="nav-projects">
+                <a href="smart-committer.html" class="nav-project prev">
+                    <span class="nav-arrow">←</span>
+                    <div class="nav-content">
+                        <span class="nav-label">Предыдущий проект</span>
+                        <span class="nav-title">Smart Committer</span>
+                    </div>
+                </a>
+                
+                <a href="../index.html#portfolio" class="nav-project back">
+                    <span class="nav-label">Все проекты</span>
+                </a>
+                
+                <a href="tebium-ecosystem.html" class="nav-project next">
+                    <div class="nav-content">
+                        <span class="nav-label">Следующий проект</span>
+                        <span class="nav-title">TeBium Ecosystem</span>
+                    </div>
+                    <span class="nav-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
