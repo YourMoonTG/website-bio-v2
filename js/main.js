@@ -19,9 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function initThemeToggle() {
     console.log('[theme] init toggle...');
     
+    // Определяем базовый путь к иконкам в зависимости от глубины страницы
+    const isProjectPage = window.location.pathname.includes('/projects/');
+    const iconBasePath = isProjectPage ? '../assets/icons/' : 'assets/icons/';
+    
     const icons = {
-        sun: 'assets/icons/icon-sun.svg',
-        moon: 'assets/icons/icon-moon.svg'
+        sun: iconBasePath + 'icon-sun.svg',
+        moon: iconBasePath + 'icon-moon.svg'
     };
     
     const themeToggle = document.getElementById('theme-toggle');
