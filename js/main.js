@@ -20,8 +20,8 @@ function initThemeToggle() {
     console.log('[theme] init toggle...');
     
     const icons = {
-        sun: 'https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/sun.svg',
-        moon: 'https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/moon.svg'
+        sun: 'assets/icons/icon-sun.svg',
+        moon: 'assets/icons/icon-moon.svg'
     };
     
     const themeToggle = document.getElementById('theme-toggle');

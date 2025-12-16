@@ -119,8 +119,8 @@ body {
 }
 
 .theme-toggle {
-    background: none;
-    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 136, 0.4);
     color: var(--text-primary);
     cursor: pointer;
     transition: var(--transition-fast);
@@ -129,8 +129,8 @@ body {
 }
 
 .theme-icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     display: block;
     object-fit: contain;
     filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.3));
