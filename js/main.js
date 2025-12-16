@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('[main] DOM ready, init components...');
     
     // Инициализируем все компоненты
+    setImageFallbacks();
     initThemeToggle();
     initSmoothScroll();
     initScrollAnimations();
@@ -19,8 +20,8 @@ function initThemeToggle() {
     console.log('[theme] init toggle...');
     
     const icons = {
-        sun: 'https://img.icons8.com/ios-filled/50/ffaa00/sun--v1.png',
-        moon: 'https://img.icons8.com/ios-filled/50/00ff88/crescent-moon.png'
+        sun: 'https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/sun.svg',
+        moon: 'https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/moon.svg'
     };
     
     const themeToggle = document.getElementById('theme-toggle');
@@ -64,12 +65,11 @@ function initSmoothScroll() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
             const targetId = link.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
+                e.preventDefault();
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
@@ -79,6 +79,9 @@ function initSmoothScroll() {
                 });
                 
                 console.log(`[scroll] to section: ${targetId}`);
+            } else {
+                // Элемента нет на странице — переходим по ссылке (например, с внутренних страниц)
+                window.location.href = link.href;
             }
         });
     });
@@ -243,6 +246,22 @@ window.addEventListener('resize', debounce(() => {
 window.addEventListener('error', (e) => {
     console.error('[error] JavaScript:', e.error);
 });
+
+// Фолбек для иконок (если CDN недоступен)
+function setImageFallbacks() {
+    const fallback =
+        'data:image/svg+xml;base64,' +
+        'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI0IDI0Ij4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNSIgZmlsbD0iIzBiMGIwZiIvPgo8cGF0aCBkPSJNMTIgNWE3IDcgMCAxIDEgMCAxNGMwLTIuMjA5LS44OTItMy43NTgtMi4yOTItNS4wNTctMS40MDItMS4yOTgtMy4yMzktMS45NDEtNC43MDgtMS45NDFAIiBmaWxsPSIjMDBmZjg4Ii8+Cjwvc3ZnPg==';
+    
+    document.querySelectorAll('img.icon-img, img.theme-icon, img.contact-icon').forEach(img => {
+        img.referrerPolicy = 'no-referrer';
+        img.addEventListener('error', () => {
+            if (img.dataset.fallbackApplied) return;
+            img.src = fallback;
+            img.dataset.fallbackApplied = '1';
+        }, { once: true });
+    });
+}
 
 // Экспорт функций для использования в других модулях
 window.BioWebsite = {
