@@ -122,11 +122,17 @@ body {
     background: none;
     border: none;
     color: var(--text-primary);
-    font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition-fast);
     padding: 0.5rem;
     border-radius: 50%;
+}
+
+.theme-icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+    object-fit: contain;
 }
 
 .theme-toggle:hover {

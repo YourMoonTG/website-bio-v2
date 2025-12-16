@@ -1,9 +1,9 @@
 // Основная логика сайта
-console.log('🚀 Загружен main.js');
+console.log('[main] main.js loaded');
 
 // Инициализация при загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('📄 DOM загружен, инициализируем компоненты...');
+    console.log('[main] DOM ready, init components...');
     
     // Инициализируем все компоненты
     initThemeToggle();
@@ -11,18 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initTypewriterEffect();
     
-    console.log('✅ Все компоненты инициализированы');
+    console.log('[main] components initialized');
 });
 
 // Переключение темы
 function initThemeToggle() {
-    console.log('🎨 Инициализируем переключатель темы...');
+    console.log('[theme] init toggle...');
+    
+    const icons = {
+        sun: 'https://img.icons8.com/ios-filled/50/ffaa00/sun--v1.png',
+        moon: 'https://img.icons8.com/ios-filled/50/00ff88/crescent-moon.png'
+    };
     
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     
     if (!themeToggle) {
-        console.log('❌ Переключатель темы не найден');
+        console.log('[theme] toggle not found');
         return;
     }
     
@@ -39,20 +44,21 @@ function initThemeToggle() {
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
         
-        console.log(`🔄 Тема изменена на: ${newTheme}`);
+        console.log(`[theme] switched to: ${newTheme}`);
     });
     
     function updateThemeIcon(theme) {
         const icon = themeToggle.querySelector('.theme-icon');
         if (icon) {
-            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            icon.src = theme === 'dark' ? icons.sun : icons.moon;
+            icon.alt = theme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
         }
     }
 }
 
 // Плавная прокрутка
 function initSmoothScroll() {
-    console.log('📜 Инициализируем плавную прокрутку...');
+    console.log('[scroll] init smooth scroll...');
     
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -72,7 +78,7 @@ function initSmoothScroll() {
                     behavior: 'smooth'
                 });
                 
-                console.log(`📍 Прокрутка к секции: ${targetId}`);
+                console.log(`[scroll] to section: ${targetId}`);
             }
         });
     });
@@ -80,7 +86,7 @@ function initSmoothScroll() {
 
 // Анимации при скролле
 function initScrollAnimations() {
-    console.log('✨ Инициализируем анимации при скролле...');
+    console.log('[scroll] init animations...');
     
     const observerOptions = {
         threshold: 0.1,
@@ -91,7 +97,7 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                console.log(`👁️ Элемент появился: ${entry.target.className}`);
+                console.log(`[scroll] visible: ${entry.target.className}`);
             }
         });
     }, observerOptions);
@@ -106,14 +112,14 @@ function initScrollAnimations() {
 
 // Эффект печатания с постоянным курсором
 function initTypewriterEffect() {
-    console.log('⌨️ Инициализируем печатание...');
+    console.log('[typewriter] init...');
     
     const greetingElement = document.getElementById('greeting');
     const nameElement = document.getElementById('name');
     const questionElement = document.getElementById('question');
     
     if (!greetingElement || !nameElement || !questionElement) {
-        console.log('❌ Элементы для печатания не найдены');
+        console.log('[typewriter] elements not found');
         return;
     }
     
@@ -190,7 +196,7 @@ function initTypewriterEffect() {
     
     // Последовательность печатания
     async function startTyping() {
-        console.log('⌨️ Начинаем печатание...');
+        console.log('[typewriter] start typing...');
         
         // 1. "Привет" - БЕЗ курсора в конце
         await typeTextNoCursor(greetingElement, 'Привет', 80);
@@ -207,7 +213,7 @@ function initTypewriterEffect() {
         // 4. "познакомимся?" - С курсором в конце (единственный курсор)
         await typeTextWithCursor(questionElement, 'познакомимся?', 150);
         
-        console.log('✅ Печатание завершено');
+        console.log('[typewriter] completed');
     }
     
     // Запускаем через задержку
@@ -229,13 +235,13 @@ function debounce(func, wait) {
 
 // Обработка изменения размера окна
 window.addEventListener('resize', debounce(() => {
-    console.log('📱 Размер окна изменен');
+    console.log('[responsive] window resized');
     // Здесь можно добавить логику для адаптивности
 }, 250));
 
 // Обработка ошибок
 window.addEventListener('error', (e) => {
-    console.error('❌ Ошибка JavaScript:', e.error);
+    console.error('[error] JavaScript:', e.error);
 });
 
 // Экспорт функций для использования в других модулях

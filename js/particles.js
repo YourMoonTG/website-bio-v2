@@ -1,5 +1,5 @@
 // Модуль звездного неба с эффектом "звездного ветра"
-console.log('✨ Загружен particles.js');
+console.log('[particles] script loaded');
 
 class StarField {
     constructor() {
@@ -17,11 +17,11 @@ class StarField {
     }
     
     init() {
-        console.log('✨ Инициализируем звездное небо...');
+        console.log('[particles] init star field...');
         
         this.container = document.getElementById('particles');
         if (!this.container) {
-            console.log('❌ Контейнер частиц не найден');
+            console.log('[particles] container not found');
             return;
         }
         
@@ -29,7 +29,7 @@ class StarField {
         this.addEventListeners();
         this.animate();
         
-        console.log('✅ Звездное небо инициализировано');
+        console.log('[particles] star field ready');
     }
     
     createStars() {
@@ -83,7 +83,7 @@ class StarField {
             });
         }
         
-        console.log(`✅ Создано ${this.stars.length} звезд`);
+        console.log(`[particles] created ${this.stars.length} stars`);
     }
     
     addEventListeners() {
@@ -219,12 +219,12 @@ class StarField {
     
     pauseAnimation() {
         this.isVisible = false;
-        console.log('⏸️ Анимация звезд приостановлена (hero не виден)');
+        console.log('[particles] paused (hero hidden)');
     }
     
     resumeAnimation() {
         this.isVisible = true;
-        console.log('▶️ Анимация звезд возобновлена (hero виден)');
+        console.log('[particles] resumed (hero visible)');
     }
     
     destroy() {
@@ -236,13 +236,13 @@ class StarField {
             this.container.innerHTML = '';
         }
         
-        console.log('🗑️ Звездное небо уничтожено');
+        console.log('[particles] destroyed');
     }
 }
 
 // Инициализируем звездное небо при загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('✨ Инициализируем звездное небо...');
+    console.log('[particles] DOM ready, init star field...');
     window.starField = new StarField();
 });
 
