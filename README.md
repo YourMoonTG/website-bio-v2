@@ -4,22 +4,51 @@
 ```
 bio-website-v2/
 ├── index.html            # Главная страница портфолио
-├── css/
+├── blog.html             # Страница блога
+├── css/                  # Стили
 │   ├── main.css          # Базовая тема и раскладка
-│   ├── components.css    # Карточки, кнопки, гриды
-│   └── animations.css    # Минимальные эффекты scroll/звёзд
-├── js/
-│   ├── main.js           # Тема, скролл, тайпрайтер
-│   └── particles.js      # Звёздное небо в hero
-├── assets/               # Зарезервировано под изображения/шрифты
-├── projects/
+│   ├── components.css   # Карточки, кнопки, гриды
+│   ├── animations.css   # Минимальные эффекты scroll/звёзд
+│   └── blog.css         # Стили для блога
+├── js/                   # JavaScript модули
+│   ├── main.js          # Тема, скролл, тайпрайтер
+│   ├── particles.js     # Звёздное небо в hero
+│   ├── cube.js          # 3D куб (Three.js)
+│   ├── blog.js          # Модуль списка статей блога
+│   └── article.js       # Модуль отдельной статьи
+├── assets/              # Ресурсы
+│   └── icons/           # SVG иконки
+├── blog/                # Блог
+│   ├── articles.json    # Метаданные статей
+│   ├── posts/           # HTML файлы статей
+│   ├── assets/          # Изображения для статей
+│   ├── post-template.html # Шаблон статьи
+│   └── README.md        # Документация блога
+├── projects/            # Страницы проектов
 │   ├── project-styles.css
-│   └── *.html            # Страницы проектов
-├── archive/
-│   ├── css/animations-full.css  # Полный набор анимаций (архив)
-│   └── docs/             # Исходные дизайн-документы, вайрфреймы и заметки
-├── start-site.cmd        # Быстрый просмотр в браузере
-└── README.md
+│   ├── smart-committer.html
+│   ├── smart-committer.css
+│   ├── smart-committer.js
+│   ├── tebium-ecosystem.html
+│   └── custom-linux.html
+├── api/                 # API сервер для блога
+│   ├── server.js        # Express API сервер
+│   ├── package.json     # Зависимости
+│   ├── README.md        # Документация API
+│   ├── QUICKSTART.md    # Быстрый старт
+│   └── telegram-bot-example.* # Примеры интеграции
+├── scripts/             # Утилиты
+│   ├── add-article.js   # Добавление статей
+│   └── validate-blog.js # Валидация блога
+├── docs/                # Документация
+│   ├── plans/           # Планы разработки
+│   └── README.md        # Индекс документации
+├── archive/             # Архив
+│   ├── css/             # Старые стили
+│   └── docs/            # Старые документы
+├── backups/             # Бэкапы (игнорируется Git)
+├── start-site.cmd       # Быстрый просмотр в браузере
+└── README.md            # Этот файл
 ```
 
 ## План разработки

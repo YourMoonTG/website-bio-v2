@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - Moon</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/blog.css">
+    
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">Moon</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html#about" class="nav-link">О себе</a>
+                    <a href="index.html#portfolio" class="nav-link">Портфолио</a>
+                    <a href="#blog" class="nav-link">Блог</a>
+                    <a href="index.html#contact" class="nav-link">Контакты</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                    <img class="theme-icon icon-img icon-24" src="assets/icons/icon-moon.svg" alt="Тёмная тема">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero секция блога -->
+    <section class="hero" style="min-height: 50vh; padding-top: 6rem;">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;">Блог</h1>
+                <p class="hero-subtitle" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    Блог в процессе сборки. Я не хочу выкатывать пустые статьи ради галочки, поэтому сначала доработаю несколько тем, а потом открою их здесь.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Опубликованные статьи -->
+    <section class="blog" id="blog" style="padding: 4rem 0; background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Статьи</h2>
+            
+            <!-- Поиск -->
+            <div class="blog-search">
+                <input 
+                    type="text" 
+                    class="blog-search-input" 
+                    placeholder="Поиск по статьям..."
+                    id="blog-search-input"
+                >
+            </div>
+            
+            <!-- Фильтры по тегам -->
+            <div class="blog-filters"></div>
+            
+            <!-- Контейнер для списка статей -->
+            <div id="articles-list"></div>
+        </div>
+    </section>
+
+    <!-- Заметки в работе (черновики) -->
+    <section class="blog-drafts" style="padding: 4rem 0; background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="section-title">Заметки, которые сейчас в работе</h2>
+            <div class="projects-grid" style="max-width: 1000px; margin: 0 auto;">
+                <div class="project-card" style="cursor: default;">
+                    <div class="project-image" style="height: 180px;">
+                        <div class="project-placeholder">
+                            <img class="icon-img icon-64" src="assets/icons/icon-robot.svg" alt="Telegram экосистемы">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span class="status-badge draft">В работе</span>
+                        </div>
+                        <h3 class="project-title">Как я проектирую Telegram‑экосистемы</h3>
+                        <p class="project-description">Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" style="cursor: default;">
+                    <div class="project-image" style="height: 180px;">
+                        <div class="project-placeholder">
+                            <img class="icon-img icon-64" src="assets/icons/icon-shield.svg" alt="Продовые сервисы">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span class="status-badge draft">В работе</span>
+                        </div>
+                        <h3 class="project-title">Что считаю обязательным в продовом сервисе</h3>
+                        <p class="project-description">Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card" style="cursor: default;">
+                    <div class="project-image" style="height: 180px;">
+                        <div class="project-placeholder">
+                            <img class="icon-img icon-64" src="assets/icons/icon-chart.svg" alt="Логи и метрики">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span class="status-badge draft">В работе</span>
+                        </div>
+                        <h3 class="project-title">Как я подхожу к логам и метрикам</h3>
+                        <p class="project-description">Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Готов к новым проектам и интересным задачам!</p>
+                    <div class="contact-links">
+                        <a href="mailto:moon@example.com" class="contact-link">
+                            <img class="contact-icon icon-img" src="assets/icons/icon-mail.svg" alt="Почта">
+                            moon@example.com
+                        </a>
+                        <a href="https://github.com/YourMoonTG" class="contact-link">
+                            <img class="contact-icon icon-img" src="assets/icons/icon-github.svg" alt="GitHub">
+                            GitHub
+                        </a>
+                        <a href="https://t.me/m00n_ecosys" class="contact-link">
+                            <img class="contact-icon icon-img" src="assets/icons/icon-telegram.svg" alt="Telegram">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заголовок статьи - Moon</title>
+    
+    <!-- Метаданные статьи -->
+    <meta name="article-id" content="article-id">
+    <meta name="article-date" content="2024-12-15">
+    <meta name="article-tags" content="tag1,tag2,tag3">
+    <meta name="article-read-time" content="5">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <span class="logo-text">Moon</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html#about" class="nav-link">О себе</a>
+                    <a href="../index.html#portfolio" class="nav-link">Портфолио</a>
+                    <a href="../blog.html" class="nav-link">Блог</a>
+                    <a href="../index.html#contact" class="nav-link">Контакты</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                    <img class="theme-icon icon-img icon-24" src="../assets/icons/icon-moon.svg" alt="Тёмная тема">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero секция статьи -->
+    <section class="article-hero" style="padding-top: 6rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="article-hero-content">
+                <!-- Хлебные крошки -->
+                <div class="article-breadcrumb">
+                    <a href="../index.html">Главная</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="../blog.html">Блог</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Статья</span>
+                </div>
+                
+                <!-- Метаданные статьи -->
+                <div class="article-meta-header">
+                    <span class="article-date-header" id="article-date">15 декабря 2024</span>
+                    <span class="article-read-time-header" id="article-read-time">5 мин чтения</span>
+                </div>
+                
+                <!-- Заголовок статьи -->
+                <h1 class="article-title-main" id="article-title">Заголовок статьи</h1>
+                
+                <!-- Теги статьи -->
+                <div class="article-tags-header" id="article-tags">
+                    <span class="article-tag">тег1</span>
+                    <span class="article-tag">тег2</span>
+                    <span class="article-tag">тег3</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контент статьи -->
+    <section class="article-content-section" style="padding: 2rem 0 4rem;">
+        <div class="container">
+            <article class="article-content-wrapper">
+                <div class="article-content" id="article-body">
+                    <!-- Здесь будет контент статьи -->
+                    <p>Контент статьи будет здесь...</p>
+                    
+                    <h2>Пример заголовка H2</h2>
+                    <p>Пример параграфа с текстом статьи.</p>
+                    
+                    <h3>Пример заголовка H3</h3>
+                    <p>Еще один параграф с текстом.</p>
+                    
+                    <ul>
+                        <li>Пункт списка 1</li>
+                        <li>Пункт списка 2</li>
+                        <li>Пункт списка 3</li>
+                    </ul>
+                    
+                    <pre><code>// Пример кода
+function example() {
+    return "Hello, World!";
+}</code></pre>
+                    
+                    <blockquote>
+                        Пример цитаты из статьи.
+                    </blockquote>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Навигация между статьями -->
+    <section class="article-navigation" style="padding: 2rem 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="article-nav-wrapper">
+                <a href="#" class="article-nav-link article-nav-prev" id="article-prev" style="display: none;">
+                    <div class="article-nav-label">← Предыдущая статья</div>
+                    <div class="article-nav-title" id="article-prev-title"></div>
+                </a>
+                <a href="../blog.html" class="article-nav-link article-nav-back">
+                    <div class="article-nav-label">← Назад к блогу</div>
+                </a>
+                <a href="#" class="article-nav-link article-nav-next" id="article-next" style="display: none;">
+                    <div class="article-nav-label">Следующая статья →</div>
+                    <div class="article-nav-title" id="article-next-title"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Связанные статьи -->
+    <section class="related-articles" style="padding: 4rem 0; background: var(--bg-primary);">
+        <div class="container">
+            <h2 class="section-title">Похожие статьи</h2>
+            <div id="related-articles-list" class="articles-grid">
+                <!-- Связанные статьи будут загружены через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Готов к новым проектам и интересным задачам!</p>
+                    <div class="contact-links">
+                        <a href="mailto:moon@example.com" class="contact-link">
+                            <img class="contact-icon icon-img" src="../assets/icons/icon-mail.svg" alt="Почта">
+                            moon@example.com
+                        </a>
+                        <a href="https://github.com/YourMoonTG" class="contact-link">
+                            <img class="contact-icon icon-img" src="../assets/icons/icon-github.svg" alt="GitHub">
+                            GitHub
+                        </a>
+                        <a href="https://t.me/m00n_ecosys" class="contact-link">
+                            <img class="contact-icon icon-img" src="../assets/icons/icon-telegram.svg" alt="Telegram">
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/article.js"></script>
+</body>
+</html>
+

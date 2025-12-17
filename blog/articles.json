@@ -1,0 +1,38 @@
+{
+  "articles": [
+    {
+      "id": "telegram-ecosystems",
+      "title": "Как я проектирую Telegram‑экосистемы",
+      "date": "2024-12-15",
+      "tags": ["telegram", "архитектура", "python"],
+      "excerpt": "Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.",
+      "contentFile": "blog/posts/2024-12-15-telegram-ecosystems.html",
+      "status": "draft",
+      "readTime": 5,
+      "icon": "icon-robot.svg"
+    },
+    {
+      "id": "production-essentials",
+      "title": "Что считаю обязательным в продовом сервисе",
+      "date": "2024-12-20",
+      "tags": ["production", "devops", "надежность"],
+      "excerpt": "Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.",
+      "contentFile": "blog/posts/2024-12-20-production-essentials.html",
+      "status": "draft",
+      "readTime": 7,
+      "icon": "icon-shield.svg"
+    },
+    {
+      "id": "logs-metrics",
+      "title": "Как я подхожу к логам и метрикам",
+      "date": "2024-12-25",
+      "tags": ["логи", "метрики", "мониторинг", "observability"],
+      "excerpt": "Тема уже в заметках, собираю примеры и иллюстрации. Появится здесь, когда из этого получится полезный текст, а не просто поток мыслей.",
+      "contentFile": "blog/posts/2024-12-25-logs-metrics.html",
+      "status": "draft",
+      "readTime": 6,
+      "icon": "icon-chart.svg"
+    }
+  ]
+}
+

@@ -766,6 +766,11 @@
     display: block;
 }
 
+.link-card-static {
+    cursor: default;
+    pointer-events: none;
+}
+
 .link-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
@@ -924,6 +929,84 @@
     }
 }
 
+/* WIP блоки (заглушки для незаконченных секций) */
+.wip-block {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+    background: var(--bg-tertiary);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    position: relative;
+    text-align: center;
+}
+
+.wip-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 165, 0, 0.2);
+    color: #ffa500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.wip-block h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: 'Orbitron', monospace;
+}
+
+.wip-block > p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+.wip-planned {
+    text-align: left;
+    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.wip-planned h4 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.wip-planned ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wip-planned li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.wip-planned li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 @media (max-width: 480px) {
     .project-title {
         font-size: 2rem;
@@ -940,5 +1023,16 @@
     .project-results h2,
     .project-links h2 {
         font-size: 1.5rem;
+    }
+    
+    .wip-block {
+        padding: 2rem 1.5rem;
+    }
+    
+    .wip-badge {
+        top: 0.8rem;
+        right: 0.8rem;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
     }
 }
