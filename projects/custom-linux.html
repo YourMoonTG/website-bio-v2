@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кастомный Linux - Moon Portfolio</title>
+    <title>Кастомный Linux - Автоматизированная настройка Arch Linux WSL | Moon Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Кастомный Linux — автоматизированная настройка Arch Linux WSL с современными инструментами. PowerShell скрипты для быстрой настройки рабочего окружения.">
+    <meta name="keywords" content="Arch Linux, WSL, кастомный Linux, автоматизация, PowerShell, zsh, настройка Linux, разработка">
+    <meta name="author" content="Moon">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourmoontg.github.io/projects/custom-linux.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yourmoontg.github.io/projects/custom-linux.html">
+    <meta property="og:title" content="Кастомный Linux - Автоматизированная настройка Arch Linux WSL">
+    <meta property="og:description" content="Автоматизированная настройка Arch Linux WSL с современными инструментами. PowerShell скрипты для быстрой настройки рабочего окружения.">
+    <meta property="og:image" content="https://yourmoontg.github.io/assets/icons/icon-linux.svg">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Moon Portfolio">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourmoontg.github.io/projects/custom-linux.html">
+    <meta name="twitter:title" content="Кастомный Linux - Автоматизированная настройка Arch Linux WSL">
+    <meta name="twitter:description" content="Автоматизированная настройка Arch Linux WSL с современными инструментами.">
+    <meta name="twitter:image" content="https://yourmoontg.github.io/assets/icons/icon-linux.svg">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Кастомный Linux",
+      "applicationCategory": "UtilityApplication",
+      "description": "Автоматизированная настройка Arch Linux WSL с современными инструментами",
+      "url": "https://yourmoontg.github.io/projects/custom-linux.html",
+      "author": {
+        "@type": "Person",
+        "name": "Moon"
+      },
+      "programmingLanguage": ["PowerShell"],
+      "operatingSystem": "Linux"
+    }
+    </script>
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
@@ -94,6 +135,26 @@
         </div>
     </section>
 
+    <!-- Как это выглядело на практике -->
+    <section class="project-case">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>Контекст, задачи и результат</h2>
+                    <p>До проекта рабочее окружение под Windows собиралось вручную: установка WSL, базового Linux, оболочки, инструментов, IDE&nbsp;&mdash; каждый раз по памяти и заметкам. На это уходили часы, а результат всё равно отличался от машины к машине.</p>
+                    
+                    <p>Задача&nbsp;&mdash; превратить это в воспроизводимый процесс: один скрипт, который доводит систему до комфортного состояния для разработки, с предсказуемым результатом и минимальным количеством ручных шагов.</p>
+                    
+                    <h3>Как это решали</h3>
+                    <p>Вместо того чтобы каждый раз руками повторять одни и те же шаги, мы формализовали весь опыт настройки в один сценарий: скрипт шаг за шагом поднимает WSL, систему, оболочку, инструменты и конфиги. Конкретные технологии и компоненты описаны в обзоре и блоке со стеком, а здесь главное&nbsp;&mdash; что процесс стал воспроизводимым.</p>
+                    
+                    <h3>Что изменилось для пользователя</h3>
+                    <p>Новая машина из “ничего” превращается в рабочее окружение за один запуск скрипта: с привычной оболочкой, инструментами и конфигами. Это экономит часы на разворачивание и даёт уверенность, что окружение предсказуемо и повторяется от машины к машине, без сюрпризов “почему здесь всё работает иначе”.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Технологический стек -->
     <section class="project-tech">
         <div class="container">
@@ -102,59 +163,59 @@
                 <div class="tech-category">
                     <h3>Основные технологии</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-powershell">PowerShell</span>
-                        <span class="tech-tag tech-arch">Arch Linux</span>
-                        <span class="tech-tag tech-wsl">WSL 2</span>
+                        <span class="tech-tag tech-powershell" data-tooltip="Автоматизация установки и настройки">PowerShell</span>
+                        <span class="tech-tag tech-arch" data-tooltip="База системы в WSL">Arch Linux</span>
+                        <span class="tech-tag tech-wsl" data-tooltip="Среда Linux внутри Windows">WSL 2</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Оболочка и терминал</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-zsh">zsh</span>
-                        <span class="tech-tag tech-ohmyzsh">oh-my-zsh</span>
-                        <span class="tech-tag tech-p10k">powerlevel10k</span>
+                        <span class="tech-tag tech-zsh" data-tooltip="Главная оболочка">zsh</span>
+                        <span class="tech-tag tech-ohmyzsh" data-tooltip="Плагины и удобства для zsh">oh-my-zsh</span>
+                        <span class="tech-tag tech-p10k" data-tooltip="Тема/промпт с кастомизацией">powerlevel10k</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Системные утилиты</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-vim">vim</span>
-                        <span class="tech-tag tech-git">git</span>
-                        <span class="tech-tag tech-curl">curl</span>
-                        <span class="tech-tag tech-wget">wget</span>
+                        <span class="tech-tag tech-vim" data-tooltip="Базовый редактор">vim</span>
+                        <span class="tech-tag tech-git" data-tooltip="Контроль версий">git</span>
+                        <span class="tech-tag tech-curl" data-tooltip="HTTP-запросы">curl</span>
+                        <span class="tech-tag tech-wget" data-tooltip="Загрузка файлов">wget</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Современные инструменты</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-bat">bat</span>
-                        <span class="tech-tag tech-exa">exa</span>
-                        <span class="tech-tag tech-fd">fd</span>
-                        <span class="tech-tag tech-ripgrep">ripgrep</span>
-                        <span class="tech-tag tech-fzf">fzf</span>
+                        <span class="tech-tag tech-bat" data-tooltip="cat с подсветкой">bat</span>
+                        <span class="tech-tag tech-exa" data-tooltip="ls с улучшениями">exa</span>
+                        <span class="tech-tag tech-fd" data-tooltip="Быстрый поиск файлов">fd</span>
+                        <span class="tech-tag tech-ripgrep" data-tooltip="Поиск по тексту">ripgrep</span>
+                        <span class="tech-tag tech-fzf" data-tooltip="Fuzzy поиск в CLI">fzf</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Среда разработки</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-python">Python</span>
-                        <span class="tech-tag tech-nodejs">Node.js</span>
-                        <span class="tech-tag tech-go">Go</span>
-                        <span class="tech-tag tech-rust">Rust</span>
-                        <span class="tech-tag tech-docker">Docker</span>
+                        <span class="tech-tag tech-python" data-tooltip="Среда для Python-разработки">Python</span>
+                        <span class="tech-tag tech-nodejs" data-tooltip="Среда для Node.js">Node.js</span>
+                        <span class="tech-tag tech-go" data-tooltip="Среда для Go">Go</span>
+                        <span class="tech-tag tech-rust" data-tooltip="Среда для Rust">Rust</span>
+                        <span class="tech-tag tech-docker" data-tooltip="Контейнеры для сервисов">Docker</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Конфигурация</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-yaml">YAML</span>
-                        <span class="tech-tag tech-json">JSON</span>
-                        <span class="tech-tag tech-conf">Конфигурационные файлы</span>
+                        <span class="tech-tag tech-yaml" data-tooltip="Конфиги и плейбуки">YAML</span>
+                        <span class="tech-tag tech-json" data-tooltip="Конфиги и данные">JSON</span>
+                        <span class="tech-tag tech-conf" data-tooltip="Прочие конфигурации">Конфигурационные файлы</span>
                     </div>
                 </div>
             </div>

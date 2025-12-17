@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeBium Ecosystem - Moon Portfolio</title>
+    <title>TeBium Ecosystem - Модульная экосистема для Telegram ботов | Moon Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TeBium Ecosystem — модульная экосистема для управления Telegram ботами с аналитикой. Python, aiogram, Docker. Полнофункциональная система для автоматизации.">
+    <meta name="keywords" content="TeBium Ecosystem, Telegram боты, Python, aiogram, Docker, модульная архитектура, аналитика, автоматизация">
+    <meta name="author" content="Moon">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourmoontg.github.io/projects/tebium-ecosystem.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yourmoontg.github.io/projects/tebium-ecosystem.html">
+    <meta property="og:title" content="TeBium Ecosystem - Модульная экосистема для Telegram ботов">
+    <meta property="og:description" content="Модульная экосистема для управления Telegram ботами с аналитикой. Python, aiogram, Docker.">
+    <meta property="og:image" content="https://yourmoontg.github.io/assets/icons/icon-world.svg">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Moon Portfolio">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourmoontg.github.io/projects/tebium-ecosystem.html">
+    <meta name="twitter:title" content="TeBium Ecosystem - Модульная экосистема для Telegram ботов">
+    <meta name="twitter:description" content="Модульная экосистема для управления Telegram ботами с аналитикой. Python, aiogram, Docker.">
+    <meta name="twitter:image" content="https://yourmoontg.github.io/assets/icons/icon-world.svg">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TeBium Ecosystem",
+      "applicationCategory": "BusinessApplication",
+      "description": "Модульная экосистема для управления Telegram ботами с аналитикой",
+      "url": "https://yourmoontg.github.io/projects/tebium-ecosystem.html",
+      "author": {
+        "@type": "Person",
+        "name": "Moon"
+      },
+      "programmingLanguage": ["Python"],
+      "operatingSystem": "Linux"
+    }
+    </script>
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
@@ -94,6 +135,26 @@
         </div>
     </section>
 
+    <!-- Как это выглядело на практике -->
+    <section class="project-case">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>Контекст, задачи и результат</h2>
+                    <p>Стартовали с очень приземлённой задачи: нужен был простой Telegram‑бот, который помогал бы связывать рекламодателей и закупщиков рекламы, плюс долгосрочная поддержка этого решения. На этапе проработки выяснилось, что вокруг уже крутятся процессы, которые невозможно аккуратно уместить в один “ботик”.</p>
+                    
+                    <p>После проектирования архитектуры и серии переговоров стало понятно, что разумнее сразу закладываться на полноценную экосистему: каркас, куда можно добавлять ботов и модули под разные задачи (от сделок до аналитики), видеть, что с ними происходит в онлайне и безопасно разворачивать изменения без “рулетки” на проде.</p>
+                    
+                    <h3>Как это решали</h3>
+                    <p>Мы собрали вокруг существующих ботов общий “скелет”: модульную архитектуру, инсталлер, отдельный уровень аналитики и панель управления. Конкретные технические детали и стек описаны в соседних блоках, здесь важнее, что теперь добавление нового модуля или изменения в одном сервисе не ломают всё остальное.</p>
+                    
+                    <h3>Что изменилось для команды</h3>
+                    <p>Из разрозненного набора скриптов получилась экосистема, где понятно, какой модуль за что отвечает и как они общаются. Новые функции добавляются отдельными модулями, а поддержка перестала быть набором “пожаров” и превратилась в плановое сопровождение системы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Технологический стек -->
     <section class="project-tech">
         <div class="container">
@@ -102,56 +163,56 @@
                 <div class="tech-category">
                     <h3>Основные технологии</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-python">Python 3.11+</span>
-                        <span class="tech-tag tech-cpp">C++</span>
-                        <span class="tech-tag tech-docker">Docker</span>
+                        <span class="tech-tag tech-python" data-tooltip="Основная логика ботов и сервисов">Python 3.11+</span>
+                        <span class="tech-tag tech-cpp" data-tooltip="Высоконагруженная аналитика и тяжёлые задачи">C++</span>
+                        <span class="tech-tag tech-docker" data-tooltip="Изоляция и предсказуемые деплои">Docker</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Telegram & API</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-aiogram">aiogram 3.4.1</span>
-                        <span class="tech-tag tech-telegram">python-telegram-bot</span>
-                        <span class="tech-tag tech-aiohttp">aiohttp</span>
+                        <span class="tech-tag tech-aiogram" data-tooltip="Фреймворк для Telegram-ботов">aiogram 3.4.1</span>
+                        <span class="tech-tag tech-telegram" data-tooltip="API-обёртка Telegram">python-telegram-bot</span>
+                        <span class="tech-tag tech-aiohttp" data-tooltip="HTTP-клиент/сервер для интеграций">aiohttp</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>База данных</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-sqlalchemy">SQLAlchemy</span>
-                        <span class="tech-tag tech-postgresql">PostgreSQL</span>
-                        <span class="tech-tag tech-redis">Redis</span>
-                        <span class="tech-tag tech-sqlite">SQLite</span>
+                        <span class="tech-tag tech-sqlalchemy" data-tooltip="ORM для единых моделей данных">SQLAlchemy</span>
+                        <span class="tech-tag tech-postgresql" data-tooltip="Основное хранилище данных">PostgreSQL</span>
+                        <span class="tech-tag tech-redis" data-tooltip="Кэш/очереди и сессии">Redis</span>
+                        <span class="tech-tag tech-sqlite" data-tooltip="Лёгкие локальные модули/тесты">SQLite</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>GUI & Веб</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-pyqt">PyQt6</span>
-                        <span class="tech-tag tech-flask">Flask</span>
-                        <span class="tech-tag tech-html">HTML/CSS/JS</span>
+                        <span class="tech-tag tech-pyqt" data-tooltip="Настольные UI-инструменты">PyQt6</span>
+                        <span class="tech-tag tech-flask" data-tooltip="Лёгкие веб-сервисы и панели">Flask</span>
+                        <span class="tech-tag tech-html" data-tooltip="Вёрстка и фронтенд панели">HTML/CSS/JS</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Мониторинг & Логирование</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-prometheus">Prometheus</span>
-                        <span class="tech-tag tech-loguru">Loguru</span>
-                        <span class="tech-tag tech-structlog">Structlog</span>
+                        <span class="tech-tag tech-prometheus" data-tooltip="Метрики и алерты">Prometheus</span>
+                        <span class="tech-tag tech-loguru" data-tooltip="Структурированные логи в Python">Loguru</span>
+                        <span class="tech-tag tech-structlog" data-tooltip="Контекстное логирование">Structlog</span>
                     </div>
                 </div>
                 
                 <div class="tech-category">
                     <h3>Инструменты разработки</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag tech-pytest">pytest</span>
-                        <span class="tech-tag tech-black">Black</span>
-                        <span class="tech-tag tech-mypy">MyPy</span>
-                        <span class="tech-tag tech-cmake">CMake</span>
+                        <span class="tech-tag tech-pytest" data-tooltip="Тесты и регрессия">pytest</span>
+                        <span class="tech-tag tech-black" data-tooltip="Единый стиль кода">Black</span>
+                        <span class="tech-tag tech-mypy" data-tooltip="Проверка типов">MyPy</span>
+                        <span class="tech-tag tech-cmake" data-tooltip="Сборка C++ компонентов">CMake</span>
                     </div>
                 </div>
             </div>

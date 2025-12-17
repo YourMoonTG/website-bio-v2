@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Committer - Moon Portfolio</title>
+    <title>Smart Committer - ИИ система для Telegram-каналов | Moon Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Smart Committer — интеллектуальная система на C++20 для мониторинга Telegram-каналов и автогенерации ответов на базе OpenAI GPT-4. Production Ready проект.">
+    <meta name="keywords" content="Smart Committer, ИИ система, Telegram боты, C++20, PostgreSQL, OpenAI GPT-4, автоматизация, мониторинг каналов">
+    <meta name="author" content="Moon">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourmoontg.github.io/projects/smart-committer.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yourmoontg.github.io/projects/smart-committer.html">
+    <meta property="og:title" content="Smart Committer - ИИ система для Telegram-каналов">
+    <meta property="og:description" content="Интеллектуальная система на C++20 для мониторинга Telegram-каналов и автогенерации ответов на базе OpenAI GPT-4.">
+    <meta property="og:image" content="https://yourmoontg.github.io/assets/icons/icon-robot.svg">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Moon Portfolio">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourmoontg.github.io/projects/smart-committer.html">
+    <meta name="twitter:title" content="Smart Committer - ИИ система для Telegram-каналов">
+    <meta name="twitter:description" content="Интеллектуальная система на C++20 для мониторинга Telegram-каналов и автогенерации ответов на базе OpenAI GPT-4.">
+    <meta name="twitter:image" content="https://yourmoontg.github.io/assets/icons/icon-robot.svg">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Smart Committer",
+      "applicationCategory": "BusinessApplication",
+      "description": "Интеллектуальная система для мониторинга Telegram-каналов и автогенерации ответов на базе ИИ",
+      "url": "https://yourmoontg.github.io/projects/smart-committer.html",
+      "author": {
+        "@type": "Person",
+        "name": "Moon"
+      },
+      "programmingLanguage": ["C++20", "PostgreSQL"],
+      "operatingSystem": "Linux"
+    }
+    </script>
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
@@ -97,6 +138,26 @@
         </div>
     </section>
 
+    <!-- Как это выглядело на практике -->
+    <section class="project-case">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>Контекст, задачи и результат</h2>
+                    <p>К заказчику пришли, когда уже было несколько активных Telegram‑каналов и команда модераторов, которым нужно было отвечать на поток сообщений и комментариев. Ручной разбор занимал часы в день, а попытки “полуавтоматизации” через скрипты упирались в блокировки и нестабильность.</p>
+                    
+                    <p>Задача&nbsp;&mdash; собрать систему, которая умеет стабильно мониторить десятки каналов, предлагать осмысленные ответы на базе ИИ, не палиться как бот и при этом оставаться управляемой: с логами, метриками и понятной архитектурой.</p>
+                    
+                    <h3>Как это решали</h3>
+                    <p>По сути, мы превратили разрозненные скрипты и ручную модерацию в один управляемый конвейер: события из Telegram нормализуются, проходят через ИИ‑модели, дообрабатываются с учётом антидетекта и только потом уходят в ответ. За этим стоят те же компоненты и технологии, которые описаны в блоках с обзором и стеком.</p>
+                    
+                    <h3>Что изменилось для команды</h3>
+                    <p>Команда перестала тонуть в рутине: большая часть ответов готовится автоматически, люди подключаются там, где важен тон или контекст. При этом система выдерживает рост количества каналов и сообщений, а поведение ботов остаётся максимально “человечным” с точки зрения платформы, без ощущения “чёрного ящика” под капотом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Технологический стек -->
     <section class="project-tech">
         <div class="container">
@@ -149,135 +210,106 @@
         </div>
     </section>
 
-    <!-- Архитектура -->
+    <!-- Антидетект -->
+    <section class="project-antidetect" id="antidetect">
+        <div class="container">
+            <h2>Антидетект</h2>
+            <div class="antidetect-grid">
+                <div class="antidetect-card">
+                    <div class="antidetect-header">
+                        <div class="anti-icon-circle">
+                            <img src="../assets/icons/icon-behavior.svg" alt="Поведение и ротация">
+                        </div>
+                        <div>
+                            <div class="anti-label">Стратегия</div>
+                            <div class="anti-title">Поведение и ротация</div>
+                        </div>
+                    </div>
+                    <ul class="anti-list">
+                        <li>Вариативные паттерны действий, рандомизация пауз и порядка шагов</li>
+                        <li>Контроль частоты: защитные лимиты, мягкие кулдауны</li>
+                        <li>Ротация каналов подключения без раскрытия конкретных средств</li>
+                    </ul>
+                </div>
+
+                <div class="antidetect-card">
+                    <div class="antidetect-header">
+                        <div class="anti-icon-circle">
+                            <img src="../assets/icons/icon-traffic.svg" alt="Мониторинг сигналов">
+                        </div>
+                        <div>
+                            <div class="anti-label">Мониторинг</div>
+                            <div class="anti-title">Сигналы платформы</div>
+                        </div>
+                    </div>
+                    <ul class="anti-list">
+                        <li>Алерты по капчам, 429 и другим «жёлтым» сигналам</li>
+                        <li>Отслеживание аномалий и «подозрительных» профилей трафика</li>
+                        <li>Логи решений: кто, когда, почему ушёл в паузу</li>
+                    </ul>
+                </div>
+
+                <div class="antidetect-card anti-wide">
+                    <div class="antidetect-header">
+                        <div class="anti-icon-circle">
+                            <img src="../assets/icons/icon-incident.svg" alt="Процедуры реакции">
+                        </div>
+                        <div>
+                            <div class="anti-label">Инциденты</div>
+                            <div class="anti-title">Процедура реакции</div>
+                        </div>
+                    </div>
+                    <div class="anti-steps">
+                        <div class="anti-step">
+                            <span class="anti-step-badge">1</span>
+                            <div class="anti-step-text">
+                                <div class="anti-step-title">Детект</div>
+                                <div class="anti-step-desc">Фиксируем сигнал (капча/блок/rate limit)</div>
+                            </div>
+                        </div>
+                        <div class="anti-step">
+                            <span class="anti-step-badge">2</span>
+                            <div class="anti-step-text">
+                                <div class="anti-step-title">Пауза</div>
+                                <div class="anti-step-desc">Авто-кулдаун для аккаунта или пула</div>
+                            </div>
+                        </div>
+                        <div class="anti-step">
+                            <span class="anti-step-badge">3</span>
+                            <div class="anti-step-text">
+                                <div class="anti-step-title">Восстановление</div>
+                                <div class="anti-step-desc">Перезапуск с безопасными параметрами, повторный мониторинг</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anti-metrics">
+                        <div class="anti-metric">
+                            <div class="anti-metric-label">Баны/неделю</div>
+                            <div class="anti-metric-value">низко</div>
+                        </div>
+                        <div class="anti-metric">
+                            <div class="anti-metric-label">Время реакции</div>
+                            <div class="anti-metric-value">&lt; 1 мин</div>
+                        </div>
+                        <div class="anti-metric">
+                            <div class="anti-metric-label">Возврат в пул</div>
+                            <div class="anti-metric-value">пошагово</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Архитектура (заглушка) -->
     <section class="project-architecture" id="architecture">
         <div class="container">
             <h2>Архитектура системы</h2>
-            <p class="arch-hint">Наведите на компонент для подробностей</p>
-            
-            <!-- Интерактивная SVG-схема -->
+            <p class="arch-hint">Подробная схема архитектуры сейчас в работе и появится здесь позже.</p>
             <div class="arch-diagram-wrapper">
-                <svg class="arch-svg" id="arch-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
-                    <!-- Определения для градиентов и фильтров -->
-                    <defs>
-                        <!-- Градиент для связей -->
-                        <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.3" />
-                            <stop offset="50%" style="stop-color:#00ff88;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.3" />
-                        </linearGradient>
-                        
-                        <!-- Свечение -->
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                        
-                        <!-- Анимированная точка-данные -->
-                        <circle id="dataParticle" r="4" fill="#00ff88" filter="url(#glow)"/>
-                    </defs>
-                    
-                    <!-- Связи между компонентами -->
-                    <g class="connections">
-                        <!-- Telegram → AI -->
-                        <path id="path-tg-ai" class="connection" d="M 200 120 L 400 120" stroke="url(#connectionGradient)" stroke-width="2" fill="none"/>
-                        <!-- AI → Account -->
-                        <path id="path-ai-acc" class="connection" d="M 400 120 L 600 120" stroke="url(#connectionGradient)" stroke-width="2" fill="none"/>
-                        <!-- AI → Database (вниз) -->
-                        <path id="path-ai-db" class="connection" d="M 400 160 L 400 280 L 200 280" stroke="url(#connectionGradient)" stroke-width="2" fill="none"/>
-                        <!-- AI → Analytics -->
-                        <path id="path-ai-analytics" class="connection" d="M 400 160 L 400 280 L 400 380" stroke="url(#connectionGradient)" stroke-width="2" fill="none"/>
-                        <!-- Account → Security -->
-                        <path id="path-acc-sec" class="connection" d="M 600 160 L 600 380" stroke="url(#connectionGradient)" stroke-width="2" fill="none"/>
-                    </g>
-                    
-                    <!-- Анимированные частицы данных -->
-                    <g class="data-particles">
-                        <use href="#dataParticle" class="particle">
-                            <animateMotion dur="3s" repeatCount="indefinite">
-                                <mpath href="#path-tg-ai"/>
-                            </animateMotion>
-                        </use>
-                        <use href="#dataParticle" class="particle" style="animation-delay: -1s;">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s">
-                                <mpath href="#path-ai-acc"/>
-                            </animateMotion>
-                        </use>
-                        <use href="#dataParticle" class="particle">
-                            <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
-                                <mpath href="#path-ai-db"/>
-                            </animateMotion>
-                        </use>
-                        <use href="#dataParticle" class="particle">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="1.5s">
-                                <mpath href="#path-acc-sec"/>
-                            </animateMotion>
-                        </use>
-                    </g>
-                    
-                    <!-- Узлы (компоненты) -->
-                    <g class="nodes">
-                        <!-- Telegram Monitor -->
-                        <g class="node" data-component="telegram" transform="translate(100, 80)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-telegram.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">Telegram Monitor</text>
-                            <text class="node-desc" x="100" y="72">MTProto • Мониторинг</text>
-                        </g>
-                        
-                        <!-- AI Engine -->
-                        <g class="node node-main" data-component="ai" transform="translate(300, 80)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-brain.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">AI Engine</text>
-                            <text class="node-desc" x="100" y="72">GPT-4 • Claude</text>
-                        </g>
-                        
-                        <!-- Account Manager -->
-                        <g class="node" data-component="accounts" transform="translate(500, 80)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-user.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">Account Manager</text>
-                            <text class="node-desc" x="100" y="72">Ротация • 2000+ акк</text>
-                        </g>
-                        
-                        <!-- Database -->
-                        <g class="node" data-component="database" transform="translate(100, 240)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-database.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">Database</text>
-                            <text class="node-desc" x="100" y="72">PostgreSQL • 2M+</text>
-                        </g>
-                        
-                        <!-- Analytics -->
-                        <g class="node" data-component="analytics" transform="translate(300, 340)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-chart.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">Analytics</text>
-                            <text class="node-desc" x="100" y="72">Prometheus • Grafana</text>
-                        </g>
-                        
-                        <!-- Security -->
-                        <g class="node" data-component="security" transform="translate(500, 340)">
-                            <rect class="node-bg" x="0" y="0" width="200" height="80" rx="15" ry="15"/>
-                            <image class="node-icon" href="../assets/icons/icon-shield.svg" x="84" y="18" width="32" height="32" />
-                            <text class="node-title" x="100" y="58">Antidetect</text>
-                            <text class="node-desc" x="100" y="72">Behavior • Timing</text>
-                        </g>
-                    </g>
-                </svg>
-                
-                <!-- Tooltip для деталей компонента -->
-                <div class="arch-tooltip" id="arch-tooltip">
-                    <div class="tooltip-header">
-                        <span class="tooltip-icon"></span>
-                        <span class="tooltip-title"></span>
-                    </div>
-                    <div class="tooltip-content"></div>
-                    <div class="tooltip-tech"></div>
+                <div class="project-placeholder-large">
+                    <img class="placeholder-icon icon-img icon-64" src="../assets/icons/icon-stack.svg" alt="Архитектура Smart Committer">
+                    <span>Раздел архитектуры в доработке</span>
                 </div>
             </div>
         </div>

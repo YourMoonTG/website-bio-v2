@@ -8,9 +8,9 @@ console.log('🤖 Smart Committer page loaded');
 document.addEventListener('DOMContentLoaded', () => {
     console.log('📄 Initializing Smart Committer components...');
     
-    // Этап 2: Матрица сообщений
-    initMatrixBackground();
-    
+    // Этап 2: Матрица сообщений — отключено, чтобы убрать старый фон с летающими символами
+    // initMatrixBackground();
+ 
     // Этап 3: Интерактивная архитектура
     // initArchitectureDiagram();
     

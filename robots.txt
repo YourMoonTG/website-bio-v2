@@ -1,0 +1,21 @@
+# robots.txt для Moon Portfolio
+
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию всех страниц
+Allow: /index.html
+Allow: /blog.html
+Allow: /projects/
+Allow: /blog/posts/
+
+# Запрещаем индексацию служебных директорий
+Disallow: /api/
+Disallow: /scripts/
+Disallow: /docs/
+Disallow: /archive/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://yourmoontg.github.io/sitemap.xml
+

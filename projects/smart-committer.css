@@ -210,6 +210,177 @@
 }
 
 /* ========================================
+   Антидетект
+   ======================================== */
+
+.project-antidetect {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 255, 136, 0.02) 100%);
+    border-top: 1px solid rgba(0, 255, 136, 0.08);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.08);
+}
+
+.project-antidetect h2 {
+    margin-bottom: 1.5rem;
+}
+
+.antidetect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.antidetect-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.antidetect-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 255, 136, 0.35);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.antidetect-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.anti-icon-circle {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 255, 136, 0.12);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    box-sizing: border-box;
+}
+
+.anti-icon-circle img {
+    width: 20px;
+    height: 20px;
+}
+
+.anti-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.anti-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.anti-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.anti-list li {
+    position: relative;
+    padding-left: 1.4rem;
+}
+
+.anti-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.anti-wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .anti-wide {
+        grid-column: span 1;
+    }
+}
+
+.anti-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.anti-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.anti-step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 50%;
+    background: rgba(0, 255, 136, 0.15);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.anti-step-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.anti-step-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.anti-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.anti-metric {
+    padding: 0.75rem 0.9rem;
+    border: 1px dashed rgba(0, 255, 136, 0.25);
+    border-radius: 12px;
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.anti-metric-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.anti-metric-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ========================================
    Адаптивность
    ======================================== */
 

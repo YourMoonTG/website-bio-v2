@@ -82,6 +82,9 @@ class ArticleManager {
         // Обновляем заголовок страницы
         document.title = `${this.currentArticle.title} - Moon`;
 
+        // Обновляем SEO мета-теги
+        this.updateSEOTags();
+
         // Обновляем дату
         const dateElement = document.getElementById('article-date');
         if (dateElement) {
@@ -107,6 +110,108 @@ class ArticleManager {
                 `<span class="article-tag">${tag}</span>`
             ).join('');
         }
+    }
+
+    // Обновление SEO тегов
+    updateSEOTags() {
+        if (!this.currentArticle) return;
+
+        const baseUrl = 'https://yourmoontg.github.io';
+        const articleUrl = `${baseUrl}/${this.currentArticle.contentFile}`;
+        const articleDate = new Date(this.currentArticle.date);
+        const isoDate = articleDate.toISOString();
+        const excerpt = this.currentArticle.excerpt || this.currentArticle.title;
+        const tags = this.currentArticle.tags || [];
+        const iconPath = `${baseUrl}/assets/icons/${this.currentArticle.icon || 'icon-brain.svg'}`;
+
+        // Обновляем или создаем meta description
+        this.setOrCreateMeta('name', 'description', excerpt);
+        
+        // Обновляем keywords
+        if (tags.length > 0) {
+            this.setOrCreateMeta('name', 'keywords', tags.join(', '));
+        }
+
+        // Обновляем canonical URL
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.rel = 'canonical';
+            document.head.appendChild(canonical);
+        }
+        canonical.href = articleUrl;
+
+        // Обновляем Open Graph теги
+        this.setOrCreateMeta('property', 'og:url', articleUrl);
+        this.setOrCreateMeta('property', 'og:title', `${this.currentArticle.title} - Moon`);
+        this.setOrCreateMeta('property', 'og:description', excerpt);
+        this.setOrCreateMeta('property', 'og:image', iconPath);
+        this.setOrCreateMeta('property', 'article:published_time', isoDate);
+        
+        // Обновляем теги статьи для OG
+        tags.forEach(tag => {
+            this.setOrCreateMeta('property', 'article:tag', tag);
+        });
+
+        // Обновляем Twitter Cards
+        this.setOrCreateMeta('name', 'twitter:url', articleUrl);
+        this.setOrCreateMeta('name', 'twitter:title', `${this.currentArticle.title} - Moon`);
+        this.setOrCreateMeta('name', 'twitter:description', excerpt);
+        this.setOrCreateMeta('name', 'twitter:image', iconPath);
+
+        // Обновляем Structured Data (JSON-LD)
+        this.updateStructuredData(articleUrl, isoDate, excerpt, tags, iconPath);
+    }
+
+    // Вспомогательная функция для установки или создания meta тега
+    setOrCreateMeta(attribute, value, content) {
+        let meta = document.querySelector(`meta[${attribute}="${value}"]`);
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute(attribute, value);
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
+    }
+
+    // Обновление Structured Data (JSON-LD)
+    updateStructuredData(articleUrl, isoDate, excerpt, tags, iconPath) {
+        // Удаляем старый JSON-LD для статьи, если есть
+        const oldScript = document.querySelector('script[type="application/ld+json"]');
+        if (oldScript && oldScript.textContent.includes('BlogPosting')) {
+            oldScript.remove();
+        }
+
+        // Создаем новый JSON-LD
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": this.currentArticle.title,
+            "description": excerpt,
+            "image": iconPath,
+            "datePublished": isoDate,
+            "dateModified": isoDate,
+            "author": {
+                "@type": "Person",
+                "name": "Moon",
+                "url": "https://yourmoontg.github.io"
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Moon",
+                "url": "https://yourmoontg.github.io"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": articleUrl
+            },
+            "keywords": tags
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData, null, 2);
+        document.head.appendChild(script);
     }
 
     // Форматирование даты
