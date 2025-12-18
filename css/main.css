@@ -32,12 +32,53 @@
 }
 
 /* Основные стили */
+html {
+    background: var(--bg-primary);
+    color-scheme: dark;
+    scrollbar-color: var(--primary-color) var(--bg-secondary); /* Firefox */
+    scrollbar-width: thin;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    accent-color: var(--primary-color);
+}
+
+/* Скроллбар под цветовую схему (Chromium / WebKit) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 999px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 999px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 14px rgba(0, 255, 136, 0.6);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--secondary-color);
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.8);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--bg-secondary);
 }
 
 .container {
@@ -166,8 +207,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    /* Статичный зелёный градиентный фон для hero */
     background: 
-        /* Мягкий зеленый градиент (уменьшенная интенсивность) */
         radial-gradient(circle at 30% 40%, rgba(0, 255, 136, 0.06) 0%, transparent 70%),
         radial-gradient(circle at 70% 20%, rgba(0, 255, 136, 0.03) 0%, transparent 60%),
         radial-gradient(circle at 50% 80%, rgba(0, 255, 136, 0.04) 0%, transparent 65%),
@@ -291,6 +332,15 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Подсветка ключевых фраз */
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 0 30px rgba(0, 255, 136, 0.3);
+    position: relative;
+    transition: text-shadow 0.3s ease;
 }
 
 .projects {

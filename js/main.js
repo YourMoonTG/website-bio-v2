@@ -110,7 +110,13 @@ function initScrollAnimations() {
     }, observerOptions);
     
     // Наблюдаем за элементами
-    const animatedElements = document.querySelectorAll('.project-card, .about-content, .contact-content');
+    const animatedElements = document.querySelectorAll(
+        '.project-card, .about-content, .contact-content,' +
+        ' .architecture-diagram .arch-component,' +
+        ' .results-grid .result-card,' +
+        ' .links-grid .link-card,' +
+        ' .process-timeline .timeline-item'
+    );
     animatedElements.forEach(el => {
         el.classList.add('scroll-animate');
         observer.observe(el);

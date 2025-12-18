@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "binary-exploitation",
+      "title": "Эксплуатация бинарных уязвимостей",
+      "date": "2025-05-27",
+      "tags": ["безопасность", "reverse-engineering", "exploitation", "binaries"],
+      "excerpt": "Подробное руководство по эксплуатации бинарных уязвимостей: основы работы со стеком и регистрами, ROP цепочки, переполнение буфера, техники поиска уязвимостей через patch diffing.",
+      "contentFile": "blog/posts/2025-05-27-binary-exploitation.html",
+      "status": "published",
+      "readTime": 25,
+      "icon": "icon-shield.svg"
+    },
+    {
       "id": "telegram-ecosystems",
       "title": "Как я проектирую Telegram‑экосистемы",
       "date": "2024-12-15",
